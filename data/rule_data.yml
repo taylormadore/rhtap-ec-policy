@@ -46,6 +46,17 @@ rule_data:
   # See also the additional default rule data values defined in
   # https://github.com/enterprise-contract/ec-policies/blob/main/policy/lib/rule_data.rego
 
+  # https://conforma.dev/docs/policy/packages/release_sbom_cyclonedx.html
+  # https://conforma.dev/docs/policy/packages/release_sbom_spdx.html
+  proxy_enabled_purl_types:
+  - npm
+
+  # https://conforma.dev/docs/policy/packages/release_sbom_cyclonedx.html
+  # https://conforma.dev/docs/policy/packages/release_sbom_spdx.html
+  allowed_proxy_url_patterns:
+    npm:
+    - ^https://artifact-registry-proxy\.caching\.svc\.cluster\.local/repository/npm-proxy/?$
+
   # https://conforma.dev/docs/policy/packages/release_hermetic_task.html
   # If more build or run-script tasks are created they should be added to this list
   required_hermetic_tasks:
